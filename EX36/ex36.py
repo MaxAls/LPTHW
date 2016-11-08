@@ -1,6 +1,12 @@
 from sys import exit
 import wave
 
+global secret_door
+secret_door = False
+global found_sword
+found_sword = False
+global found_shield
+found_shield = False
 #Fanfare = wave.open(/Users/Maximilian/Repositories/LPTHW/EX36/Fanfare.wav/)
 
 def start():
@@ -115,9 +121,7 @@ def sword_room():
     What will your next action be?
     """
     global found_sword
-    found_sword = False
     global found_shield
-    found_shield = False
 
     while True:
 
@@ -166,7 +170,6 @@ def stone_room():
     What do you do?
     """
     global secret_door
-    secret_door = False
 
     choice = raw_input("> ")
 
@@ -325,77 +328,81 @@ def boss_room():
 def final_room():
     gold = False
 
-    #if secret_door:
-        #print """
-        #You enter the mysterious room that opened up behind the wall.
-        #You see a chest and open it. Inside you find heaps of Gold and a letter
-        #addressed to you personally! How mysterious... It reads:
+    if secret_door:
+        print """
+        You enter the mysterious room that opened up behind the wall.
+        You see a chest and open it. Inside you find heaps of Gold and a
+        letter addressed to you personally! How mysterious... It reads:
 
-        #Dear player.
+        Dear player.
 
-        #I am filled with pride upon seing you alive and well. I realize
-        #you wanted to take a different path. You like action, thrills and
-        #adrenalin, and yet you had to think, evaluate and reflect.
-        #Yes I tricked you, but I am sure you have learned from the
-        #experience and you have been rewarded generously, haven't you?
-        #Well The door at the end of this room will lead to freedom.
-        #I wish you all the best.
+        I am filled with pride upon seing you alive and well. I realize
+        you wanted to take a different path. You like action, thrills and
+        adrenalin, and yet you had to think, evaluate and reflect.
+        Yes I tricked you, but I am sure you have learned from the
+        experience and you have been rewarded generously, haven't you?
+        Well The door at the end of this room will lead to freedom.
+        I wish you all the best.
 
-        #Sincerely,
-        #Yo' Momma
-        #"""
-        #gold = True
-        #print "Do you have gold?", gold
-        #exit(0)
-    #elif found_sword:
-        #print """
-        #After this massive fight you are overjoyed to find an unlocked door
-        #behind a giant pile of wrotten flesh and bones. You pass through it
-        #and find yourself in a room with a lonley chest. Inside the chest you
-        #find heaps of Gold and a letter addressed to you personally!
-        #How mysterious... It reads:
+        Sincerely,
+        Yo' Momma
+        """
+        gold = True
+        print "Do you have gold?", gold
+        exit(0)
 
-        #Dear player.
+    elif found_sword:
+        print """
+        After this massive fight you are overjoyed to find an unlocked door
+        behind a giant pile of wrotten flesh and bones. You pass through it
+        and find yourself in a room with a lonley chest. Inside the
+        chest you find heaps of Gold and a letter addressed
+        to you personally! How mysterious... It reads:
 
-        #I am filled with pride upon seing you alive and well. I realize
-        #you wanted to take a different path. You like puzzles, riddles, and
-        #generally using your brain. Yet you had to explore and fight to
-        #the death. Yes I tricked you, but I am sure you have learned from the
-        #experience and you have been rewarded generously, haven't you?
-        #Well The door at the end of this room will lead to freedom.
-        #I wish you all the best.
+        Dear player.
 
-        #Sincerely,
-        #Yo' Momma
-        #"""
-        #gold = True
-        #print "Do you have gold?", gold
-        #exit(0)
-    #else:
-        #print """
-        #After a short distance around the building you find yourself at the
-        #back entrance. You try to open the door. It is unlocked.
-        #You enter and find a room filled with nothing but a chest.
-        #Inside the chest you find heaps of Gold and a letter addressed
-        #to you personally! How mysterious... It reads:
-    print """
-    Dear player.
+        I am filled with pride upon seing you alive and well. I realize
+        you wanted to take a different path. You like puzzles, riddles,
+        and generally using your brain. Yet you had to explore and fight
+        to the death. Yes I tricked you, but I am sure you have learned
+        from the experience and you have been rewarded generously,
+        haven't you?
+        Well The door at the end of this room will lead to freedom.
+        I wish you all the best.
 
-    Good Job, you found the last room! You have faced either foe or
-    intellectual chellenges and have proven yourelf worthy of my fortune.
-    Take all the gold you can carry. It shall be yours.
+        Sincerely,
+        Yo' Momma
+        """
+        gold = True
+        print "Do you have gold?", gold
+        exit(0)
 
-    Sincerely,
-    Yo' Momma
-    """
-    gold = True
-    print "Do you have gold?", gold
-    exit(0)
+    else:
+        print """
+        After a short distance around the building you find yourself at the
+        back entrance. You try to open the door. It is unlocked.
+        You enter and find a room filled with nothing but a chest.
+        Inside the chest you find heaps of Gold and a letter addressed
+        to you personally! How mysterious... It reads:
+
+        Dear player.
+
+        Good Job, you found the last room! How very smart of you.
+        Yet you did it without any effort. So you won't be receiveing
+        any gold.
+        Sorry.
+
+        Sincerely,
+        Yo' Momma
+        """
+
+        gold = False
+        print "Do you have gold?", gold
+        exit(0)
 
 
 def dead(why):
     print why
     exit(0)
-
 
 start()
