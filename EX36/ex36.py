@@ -128,7 +128,7 @@ def sword_room():
         choice = raw_input("> ")
 
         if "sword" in choice:
-#Fanfare
+            #Fanfare
             print """
             DUDUDUDUUUUN
             Link... uh.... YOU have obtained a sword!
@@ -144,7 +144,7 @@ def sword_room():
             choice = raw_input("> ")
 
             if "shield" in choice:
-#Fanfare
+                #Fanfare
                 print """
                 DUDUDUDUUUUN
                 Link... uh.... YOU have obtained a shield!

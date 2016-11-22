@@ -1,59 +1,3 @@
-# class Scene(object):
-#
-#     def enter(self):
-#         pass
-#
-#
-# class Engine(object):
-#
-#     def __init__(self, scene_map):
-#         pass
-#
-#     def play(self):
-#         pass
-#
-# class Death(Scene):
-#
-#     def enter(self):
-#         pass
-#
-# class CentralCorridor(Scene):
-#
-#     def enter(self):
-#         pass
-#
-# class LaserWeaponArmory(Scene):
-#
-#     def enter(self):
-#         pass
-#
-# class TheBridge(Scene):
-#
-#     def enter(self):
-#         pass
-#
-# class EscapePod(Scene):
-#
-#     def enter(self):
-#         pass
-#
-#
-# class Map(object):
-#
-#     def __init__(self, start_scene):
-#         pass
-#
-#     def next_scene(self, scene_name):
-#         pass
-#
-#     def opening_scene(self):
-#         pass
-#
-#
-# a_map = Map('central_corridor')
-# a_game = Engine(a_map)
-# a_game.play()
-
 from sys import exit
 from random import randint
 
@@ -86,12 +30,12 @@ class Death(Scene):
         "I have a small puppy that's better at this."
         ]
 
-def enter(self):
-    print Death.quips[randint(0, len(self.quips)-1)]
-    exit(1)
+    def enter(self):
+        print Death.quips[randint(0, len(self.quips)-1)]
+        exit(1)
 
 class CentralCorridor(Scene):
-  def enter(self):
+    def enter(self):
       print "The Gothons of Planet Percal #25 have invaded your ship and destroyed"
       print "your entire crew. You are the last surviving member and your last"
       print "mission is to get the neutron destruct bomb from the Weapons Armory,"
